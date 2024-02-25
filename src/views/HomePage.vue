@@ -14,7 +14,13 @@ onMounted(async () => {
 
 <template>
   <BaseTitle>TRIVIA APPLICATION</BaseTitle>
-  <div v-for ="category in categories" :key="category.id">
-    {{ category.name }}
+  <div class="grid flex-grow grid-cols-4 gap-12 m-20">
+    <RouterLink v-for ="category in categories" :key="category.id"
+    :to="``"
+    class="bg-white text-center flex h-32 items-center justify-center rounded-lg border-4 border-slate-500 py-4 font-bold uppercase hover:cursor-pointer hover:bg-blue-400 hover:text-white transition-colors duration-350"
+    >
+      {{ category.name }}
+    </RouterLink>
   </div>
+  
 </template>
